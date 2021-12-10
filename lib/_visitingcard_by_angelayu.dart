@@ -72,14 +72,8 @@ class HomeWidget extends StatelessWidget {
                   ],
                 ),
               ),
-              Container(
+              Card(
                 margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                decoration: const BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.all(Radius.circular(5))
-                ),
-                padding: const EdgeInsets.symmetric(vertical: 6,
-                  horizontal: 10,),
                 child: Row(
                   children: const [
                     Icon(Icons.email,
@@ -87,7 +81,7 @@ class HomeWidget extends StatelessWidget {
                         size : 20),
                     SizedBox(width: 40,
                     ),
-                    Text('angela_yu@appbrewery.com',
+                    Text('angela@pp.com',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.teal,
