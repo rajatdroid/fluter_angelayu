@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iampoor/_visitingcard.dart';
+import 'package:iampoor/_visitingcard_by_angelayu.dart';
 import 'package:iampoor/section6_43.dart';
 
 void main() {
@@ -9,7 +10,8 @@ void main() {
    */
   //runApp( IamPoor());
   //runApp(ChallengeApp());
-  runApp(VisitingCard());
+  //runApp(VisitingCard());
+  runApp(VisitingCardByAngela());
 }
 
 class IamPoor extends StatelessWidget {

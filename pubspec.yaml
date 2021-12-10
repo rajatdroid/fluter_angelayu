@@ -26,3 +26,14 @@ flutter:
   assets:
     - images/
 
+  fonts:
+    - family: Corinthia
+      fonts:
+        - asset: fonts/Corinthia-Regular.ttf
+    - family: Nunito
+      fonts:
+        - asset: fonts/Nunito-VariableFont_wght.ttf
+
+
+
+

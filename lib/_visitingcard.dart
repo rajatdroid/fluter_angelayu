@@ -31,7 +31,8 @@ class VCBody extends StatelessWidget {
                     color: Colors.white
                 ),
                 child: const Icon(
-                  Icons.ac_unit,
+                  Icons.person,
+                  color: Colors.orange,
                 ),
               ),
               Container(
