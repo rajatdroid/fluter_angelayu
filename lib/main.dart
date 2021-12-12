@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iampoor/_dicewidget.dart';
 import 'package:iampoor/_manualimagegrid.dart';
 import 'package:iampoor/_visitingcard.dart';
 import 'package:iampoor/_visitingcard_by_angelayu.dart';
@@ -13,7 +14,8 @@ void main() {
   //runApp(ChallengeApp());
   //runApp(VisitingCard());
   //runApp(VisitingCardByAngela());
-  runApp(ImageGridWidget());
+  //runApp(ImageGridWidget());
+  runApp(DiceApp());
 }
 
 class IamPoor extends StatelessWidget {
