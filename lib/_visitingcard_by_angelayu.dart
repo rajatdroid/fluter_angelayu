@@ -74,20 +74,23 @@ class HomeWidget extends StatelessWidget {
               ),
               Card(
                 margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                child: Row(
-                  children: const [
-                    Icon(Icons.email,
-                        color: Colors.teal,
-                        size : 20),
-                    SizedBox(width: 40,
-                    ),
-                    Text('angela@pp.com',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.teal,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    children: const [
+                      Icon(Icons.email,
+                          color: Colors.teal,
+                          size : 20),
+                      SizedBox(width: 40,
                       ),
-                    )
-                  ],
+                      Text('angela@pp.com',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.teal,
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
             ],
