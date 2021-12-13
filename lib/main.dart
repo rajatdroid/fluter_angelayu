@@ -4,6 +4,7 @@ import 'package:iampoor/_dicewidget.dart';
 import 'package:iampoor/_manualimagegrid.dart';
 import 'package:iampoor/_visitingcard.dart';
 import 'package:iampoor/_visitingcard_by_angelayu.dart';
+import 'package:iampoor/_xylophoneapp.dart';
 import 'package:iampoor/section6_43.dart';
 
 void main() {
@@ -17,7 +18,8 @@ void main() {
   //runApp(VisitingCardByAngela());
   //runApp(ImageGridWidget());
   //runApp(DiceApp());
-  runApp(AskMeAnything());
+  //runApp(AskMeAnything());
+  runApp(XylophoneApp());
 }
 
 class IamPoor extends StatelessWidget {
