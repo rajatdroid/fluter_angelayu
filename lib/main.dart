@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iampoor/_ask_me_anything.dart';
 import 'package:iampoor/_dicewidget.dart';
 import 'package:iampoor/_manualimagegrid.dart';
 import 'package:iampoor/_visitingcard.dart';
@@ -15,7 +16,8 @@ void main() {
   //runApp(VisitingCard());
   //runApp(VisitingCardByAngela());
   //runApp(ImageGridWidget());
-  runApp(DiceApp());
+  //runApp(DiceApp());
+  runApp(AskMeAnything());
 }
 
 class IamPoor extends StatelessWidget {
