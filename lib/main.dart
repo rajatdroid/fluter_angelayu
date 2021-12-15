@@ -3,6 +3,7 @@ import 'package:iampoor/_ask_me_anything.dart';
 import 'package:iampoor/_dicewidget.dart';
 import 'package:iampoor/_manualimagegrid.dart';
 import 'package:iampoor/_quizzler.dart';
+import 'package:iampoor/_storyapp.dart';
 import 'package:iampoor/_visitingcard.dart';
 import 'package:iampoor/_visitingcard_by_angelayu.dart';
 import 'package:iampoor/_xylophoneapp.dart';
@@ -21,7 +22,8 @@ void main() {
   //runApp(DiceApp());
   //runApp(AskMeAnything());
   //runApp(XylophoneApp());
-  runApp(QuizllerApp());
+  //runApp(QuizllerApp());
+  runApp(StoryApp());
 }
 
 class IamPoor extends StatelessWidget {

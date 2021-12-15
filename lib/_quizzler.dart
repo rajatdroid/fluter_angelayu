@@ -3,6 +3,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 class QuizllerApp extends StatelessWidget {
   const QuizllerApp({Key? key}) : super(key: key);
@@ -66,10 +67,10 @@ class _QuizzlerBodyState extends State<QuizzlerBody> {
             padding: const EdgeInsets.all(8.0),
             child: ElevatedButton(onPressed:
                 (){
-              setState(() {
                 if(answers.length == 7){
-                  answers = [];
+                  showAlert(context);
                 }
+                setState(() {
                 answers.add(true);
               });
               debugPrint('Yes Pressed');
@@ -87,10 +88,11 @@ class _QuizzlerBodyState extends State<QuizzlerBody> {
             padding: const EdgeInsets.all(8.0),
             child: ElevatedButton(onPressed:
                 (){
-                  setState(() {
+
                     if(answers.length == 7){
-                      answers = [];
+                      showAlert(context);
                     }
+                    setState(() {
                     answers.add(false);
                   });
             }, child: Text('No'),
@@ -113,6 +115,31 @@ class _QuizzlerBodyState extends State<QuizzlerBody> {
       ],
     );
   }
+
+  void showAlert(BuildContext context){
+    Alert(
+      context: context,
+      type: AlertType.error,
+      title: "Questions Over",
+      desc: "Press OK to reset",
+      buttons: [
+        DialogButton(
+          child: Text(
+            "Reset",
+            style: TextStyle(color: Colors.white, fontSize: 20),
+          ),
+          onPressed: (){
+            Navigator.pop(context);
+            setState(() {
+              answers = [];
+            });
+          },
+          width: 120,
+        )
+      ],
+    ).show();
+  }
+
 }
 
 List<String> getQuestions() =>
@@ -136,3 +163,4 @@ List<Icon> getScoreKeeper(List<bool> answers){
       Icon(Icons.cancel, color: Colors.white,))).toList();
   return iconList;
 }
+
