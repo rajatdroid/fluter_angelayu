@@ -8,6 +8,7 @@ import 'package:iampoor/_visitingcard.dart';
 import 'package:iampoor/_visitingcard_by_angelayu.dart';
 import 'package:iampoor/_xylophoneapp.dart';
 import 'package:iampoor/section6_43.dart';
+import 'package:iampoor/ui/_bmi_ui.dart';
 
 void main() {
 
@@ -23,7 +24,8 @@ void main() {
   //runApp(AskMeAnything());
   //runApp(XylophoneApp());
   //runApp(QuizllerApp());
-  runApp(StoryApp());
+  //runApp(StoryApp());
+  runApp(Center(child: BMIApp()));
 }
 
 class IamPoor extends StatelessWidget {
