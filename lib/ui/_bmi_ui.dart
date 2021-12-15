@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-int mainColor  = 0XFF0a0d22;
+const int mainColor  = 0XFF0a0d22;
+const int overlayColor = 0XFF1d1f33;
 
 class BMIApp extends StatelessWidget {
   const BMIApp({Key? key}) : super(key: key);
@@ -49,6 +50,8 @@ class _BMIScaffoldBodyState extends State<BMIScaffoldBody> {
   int height = 0;
   int weight = 0;
   int age = 0;
+  int maleOverlayColor = overlayColor;
+  int femaleOverlayColor = overlayColor;
 
   @override
   Widget build(BuildContext context) {
@@ -61,12 +64,30 @@ class _BMIScaffoldBodyState extends State<BMIScaffoldBody> {
             child: Container(
               alignment: Alignment.center,
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  getMaleFemaleLayout('Male'),
+                  Expanded(
+                    child: GestureDetector(
+                      onTap: (){
+                        setState(() {
+                          maleOverlayColor = Colors.teal.hashCode;
+                          femaleOverlayColor = overlayColor;
+                        });
+                      },
+                      child: getMaleFemaleLayout('Male', maleOverlayColor),
+                    ),
+                  ),
                   SizedBox(width: 10,
                   ),
-                  getMaleFemaleLayout('Female')
+                  Expanded(
+                    child: GestureDetector(onTap : (){
+                      setState(() {
+                        femaleOverlayColor = Colors.teal.hashCode;
+                        maleOverlayColor = overlayColor;
+                      });
+                    },
+                      child: getMaleFemaleLayout('Female', femaleOverlayColor),
+                    ),
+                  )
                 ],
               ),
             ),
@@ -76,7 +97,7 @@ class _BMIScaffoldBodyState extends State<BMIScaffoldBody> {
             child: Container(
               padding: EdgeInsets.symmetric(vertical: 10),
               margin: EdgeInsets.symmetric(vertical: 20),
-              decoration: getOutsideContainerBoxDecor(),
+              decoration: getOutsideContainerBoxDecor(overlayColor),
               child: getHeightWidget('kjh'),
             ),
           ),
@@ -87,9 +108,9 @@ class _BMIScaffoldBodyState extends State<BMIScaffoldBody> {
               children: [
                 Expanded(child: getWeightAge(true),
                 ),
-                 SizedBox(width: 20),
-                 Expanded(child: getWeightAge(false),
-                 )
+                SizedBox(width: 20),
+                Expanded(child: getWeightAge(false),
+                )
               ],
             ),
           ),
@@ -103,23 +124,19 @@ class _BMIScaffoldBodyState extends State<BMIScaffoldBody> {
   /**
    * Creates the Male / Female Selector Row
    */
-  Widget getMaleFemaleLayout(String text) => Expanded(
-    child: ElevatedButton(onPressed: (){},
-      style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all(Color(0XFF1d1f33))
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(Icons.person,
-            color: Colors.white,size: 100,),
-          Text(text,
-            style: TextStyle(color: Colors.white,
-              fontWeight: FontWeight.bold,
-            ),
-          )
-        ],
-      ),
+  Widget getMaleFemaleLayout(String text, int bgColor) => Container(
+    decoration: getOutsideContainerBoxDecor(bgColor),
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(Icons.person,
+          color: Colors.white,size: 100,),
+        Text(text,
+          style: TextStyle(color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+        )
+      ],
     ),
   );
 
@@ -163,7 +180,7 @@ class _BMIScaffoldBodyState extends State<BMIScaffoldBody> {
   );
 
   Widget getWeightAge(bool isWeight) => Container(
-    decoration: getOutsideContainerBoxDecor(),
+    decoration: getOutsideContainerBoxDecor(overlayColor),
     padding: EdgeInsets.symmetric(vertical: 20),
     child: Column(
       children: [
@@ -215,8 +232,8 @@ class _BMIScaffoldBodyState extends State<BMIScaffoldBody> {
     ),
   );
 
-  BoxDecoration getOutsideContainerBoxDecor() =>  BoxDecoration(
-      color: Color(0XFF1d1f33),
+  BoxDecoration getOutsideContainerBoxDecor(int color) =>  BoxDecoration(
+      color: Color(color),
       borderRadius: BorderRadius.all(Radius.circular(6))
   );
 
